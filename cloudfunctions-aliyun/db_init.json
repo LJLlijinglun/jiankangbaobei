@@ -1,0 +1,71 @@
+// 在本文件中可配置云数据库初始化，数据格式见：https://uniapp.dcloud.io/uniCloud/quickstart?id=db-init
+// 编写完毕后对本文件点右键，可按配置规则创建表和添加数据
+{
+    "admin_users": {
+        "data": [{
+            "password": "password",
+            "username": "admin"
+        }]
+    },
+    "students": {
+        "data": [{
+            "_id": "5e391dfabfbe88004e84b7ff",
+            "class_id": "5e3848f8ba9452004dde255b",
+            "password": "e3bbd437a6b191113aea45063ca7d618ce59e758",
+            "stu_name": "学生测试账号",
+            "username": "xuesheng"
+        }]
+    },
+    "parents": {
+        "data": [{
+            "_id": "5e391dfabfbe88004e84b7ff",
+            "class_id": "5e3848f8ba9452004dde255b",
+            "password": "e3bbd437a6b191113aea45063ca7d618ce59e758",
+            "stu_name": "家长测试账号",
+            "username": "jiazhang"
+        }]
+    },
+    "teachers": {
+        "data": [{
+            "class_info": "5e3848f8ba9452004dde255b",
+            "password": "e3bbd437a6b191113aea45063ca7d618ce59e758",
+            "username": "teacher"
+        }]
+    },
+    "daily_report_log": {},
+    "grade_list": {
+        "data": [{
+                "_id": "5e3848b3f831dc004dcb5f63",
+                "name": "一年级",
+                "order": 1
+            },
+            {
+                "_id": "5e3935c0879518004d7eb547",
+                "name": "二年级",
+                "order": 2
+            }
+        ]
+    },
+    "class_list": {
+        "data": [{
+                "_id": "5e3848f8ba9452004dde255b",
+                "grade_id": "5e3848b3f831dc004dcb5f63",
+                "name": "1班",
+                "order": 1,
+                "student_sum": 40
+            },
+            {
+                "grade_id": "5e3848b3f831dc004dcb5f63",
+                "name": "2班",
+                "order": 2,
+                "student_sum": 42
+            },
+            {
+                "grade_id": "5e3935c0879518004d7eb547",
+                "name": "3班",
+                "order": 3,
+                "student_sum": 40
+            }
+        ]
+    }
+}
