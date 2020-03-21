@@ -1,4 +1,4 @@
-<!-- 用户注册 邯郸-前端-秦少卫 -->
+<!-- 用户注册 海南-前端-李静伦 -->
 <template>
 	<view>
 		<view class="container">
@@ -114,7 +114,7 @@
 					})
 					return 
 				}
-				if(username.indexOf('ls') && this.userType == 0){
+				if(username.indexOf('teacher') && this.userType == 0){
 					uni.showModal({
 						content: '老师的注册方式请咨询管理员',
 						showCancel: false
