@@ -7,11 +7,11 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var crypto = _interopDefault(require('crypto'));
 
 const loginConfig = {
-	AppId: 'wx727786d6c583ae1f', //微信小程序AppId
-	AppSecret: 'dd0e6e3286bcdc093d87179911dad9dd' //微信小程序AppSecret
+	AppId: 'wxc6a6390e3dbe372f', //微信小程序AppId
+	AppSecret: '46ffc2c5373afa7113f7cdc5dfbb0416' //微信小程序AppSecret
 };
 
-const passSecret = 'Tinalijinglun1749553634'; //用于用户数据库密码加密的密钥，使用一个比较长的随机字符串即可
+const passSecret = ''; //用于用户数据库密码加密的密钥，使用一个比较长的随机字符串即可
 
 //上面三个字段非常重要！！！
 
