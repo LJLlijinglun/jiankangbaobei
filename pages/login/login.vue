@@ -1,7 +1,11 @@
-<!-- 用户登录 邯郸-前端-秦少卫 -->
+<!-- 用户登录 海南-前端-李静伦 -->
 <template>
 	<div>
 		<view class="container">
+					<view class="orgimg">
+					   <image src="../../static/news.gif" mode="widthFix" ></image>
+					  </view>
+					
 			<view class="title">
 				<text>{{school}}学生健康报备系统</text>
 			</view>
@@ -59,6 +63,14 @@
 	export default {
 		data() {
 			return {
+				// array: [{
+				                 
+				//          mode: 'aspectFit',
+				//          // text: 'aspectFill：保持纵横比缩放图片，只保证图片的短边能完全显示出来'
+				                            
+				//                 // text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
+				//             }],
+				            
 				username: '',
 				password: '',
 				tabList: [{
@@ -79,7 +91,9 @@
 					}
 				],
 				userType: 0,
-				school:''
+				school:'',
+				// src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg'
+				// url: './static/logo.png'
 			};
 		},
 		components: {
@@ -91,6 +105,9 @@
 			this.school = uni.getStorageSync('school')
 		},
 		methods: {
+			// imageError: function(e) {
+			//             console.error('image发生error事件，携带值为' + e.detail.errMsg)
+			//         },
 			tabChange(index) {
 				this.userType = index;
 			},
@@ -103,6 +120,7 @@
 				uni.showLoading({
 					title: '登录中...'
 				})
+				// promise方式 客户端调用云函数
 				uniCloud.callFunction({
 					name: 'signIn',
 					data: {
@@ -129,6 +147,7 @@
 							case 0:
 							uni.navigateTo({
 								url: '/pages/teacher_bind/teacher_bind'
+								// url: '/pages/index/index'
 							});
 								break;
 							case 1:
@@ -254,7 +273,15 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
+	.orgimg {
+		// padding-top: 10up20
+	 // // padding-top: 10up20
+	 padding: 10px;
+	 margin-bottom: 10upx;
+	 // justify-content:center;
+	 width:1000upx;
+	 height: 500upx;},
 	.weixinBtn {
 		color: #007AFF;
 		text-align: center;
@@ -299,7 +326,7 @@
 		text-align: center;
 		font-size: 20px;
 		font-weight: bold;
-		padding: 20px 0px;
+		padding: 0px 0px;
 	}
 
 	.desc {

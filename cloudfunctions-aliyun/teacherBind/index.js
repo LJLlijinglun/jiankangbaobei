@@ -1,4 +1,4 @@
-// 老师绑定班级信息 深圳-前端-张昊
+// 老师绑定班级信息 海南-前端-李静伦
 'use strict';
 const db = uniCloud.database()
 const dbCmd = db.command
