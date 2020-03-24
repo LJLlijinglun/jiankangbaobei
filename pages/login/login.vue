@@ -260,9 +260,9 @@
 <style>
 	.orgimg {
 		 padding: 10px;
-		 margin-bottom: 10upx;
+		 margin-bottom: 5upx;
 		 width:1000upx;
-		 height: 500upx;},
+		 height: 200upx;},
 	.weixinBtn {
 		color: #007AFF;
 		text-align: center;
