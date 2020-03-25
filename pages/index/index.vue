@@ -4,23 +4,23 @@
 			<view style="margin-top: 150upx;margin-bottom: 100upx;">
 				<text class="title">{{school}}学生健康报备系统</text>
 			</view>
-			<!-- <div class="tipText">
+			<div class="tipText">
 				<text>{{userText}}您好</text>
-			</div> -->
+			</div>
 
 		</view>
 		<!-- 学生家长 -->
 		<view class="buttonGroup" v-if="userType === 1 || userType === 2">
-			<!-- <navigator url="../student_bind/student_bind" class="linkBtn" >
+			<navigator url="../student_bind/student_bind" class="linkBtn" >
 				绑定学生信息
-			</navigator> -->
+			</navigator>
 			<navigator url="../student/student_day" class="linkBtn">
 				今日健康报备
 			</navigator>
 		</view>
 		<!-- 老师 -->
 		<view class="buttonGroup" v-if="userType === 0">
-			<view class="welcome">老师，您好</view>
+			<!-- <view class="welcome">老师，您好</view> -->
 			<navigator url="../teacher_bind/teacher_bind" class="linkBtn">
 				绑定管理班级
 			</navigator>
