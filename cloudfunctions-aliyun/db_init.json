@@ -36,11 +36,15 @@
     "grade_list": {
         "data": [{
                 "_id": "5e3848b3f831dc004dcb5f63",
+				"School":"学校",
+				"college":"学院",
                 "name": "一年级",
                 "order": 1
             },
             {
                 "_id": "5e3935c0879518004d7eb547",
+				"School":"学校",
+				"college":"学院",
                 "name": "二年级",
                 "order": 2
             }
@@ -50,18 +54,21 @@
         "data": [{
                 "_id": "5e3848f8ba9452004dde255b",
                 "grade_id": "5e3848b3f831dc004dcb5f63",
+				"major": "专业",
                 "name": "1班",
                 "order": 1,
                 "student_sum": 40
             },
             {
                 "grade_id": "5e3848b3f831dc004dcb5f63",
+				"major": "专业",
                 "name": "2班",
                 "order": 2,
                 "student_sum": 42
             },
             {
                 "grade_id": "5e3935c0879518004d7eb547",
+				"major": "专业",
                 "name": "3班",
                 "order": 3,
                 "student_sum": 40

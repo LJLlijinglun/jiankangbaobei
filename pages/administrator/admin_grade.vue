@@ -1,8 +1,16 @@
 <!-- 管理员管理年级信息 海南-前端-李静伦 -->
 <template>
 	<view class="warp" style="margin-top:50rpx ;">
-		<view align="center">管理年级信息</view>
+		<view align="center">管理高校年级信息</view>
 		<form action="">
+			<view class="uni-title  uni-common-pl">学校</view>
+			<view class="uni-form-item dashed-bottom">
+				<input id="School" class="uni-input" type="text" name="School" v-model="School" placeholder="请输入学校" />
+			</view>
+			<view class="uni-title  uni-common-pl">学院</view>
+			<view class="uni-form-item dashed-bottom">
+				<input id="college" class="uni-input" type="text" name="college" v-model="college" placeholder="请输入学院" />
+			</view>
 			<view class="uni-title  uni-common-pl">年级</view>
 			<view class="uni-form-item dashed-bottom">
 				<input id="name" class="uni-input" type="text" name="name" v-model="name" placeholder="请输入年级" />
@@ -11,15 +19,26 @@
 			<button @click="cancel"  type="primary" size="mini" class="button margin-top margin-lr">取消</button>
 		</form>
 		<view class="box" style="margin-top:50rpx ;">
-			<t-table border="3" border-color="#e6e5e5">
-				<t-tr font-size="16" color="#101411" align="center">
-					<t-th align="left">序号</t-th>
+			<t-table border="1" border-color="#e6e5e5">
+				<t-tr font-size="10" color="#101411" align="center">
+					<view style="width: 80rpx;">
+						<t-th align="left">序号</t-th>
+					</view>
+					<t-th align="left">学校</t-th>
+					<t-th align="left">学院</t-th>
 					<t-th align="left">年级</t-th>
+					<view style="width: 250rpx;">
 					<t-th align="left">操作</t-th>
+					</view>
 				</t-tr>
-				<t-tr font-size="14" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
-					<t-td align="left">{{item.order }}</t-td>
+				<t-tr font-size="8" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
+					<view style="width: 80rpx;">
+						<t-td align="left">{{item.order }}</t-td>
+					</view>
+					<t-td align="left">{{ item.School }}</t-td>
+					<t-td align="left">{{ item.college }}</t-td>
 					<t-td align="left">{{ item.name }}</t-td>
+					<view style="width: 250rpx;">
 					<t-td align="left">
 						<button size="mini" style="padding: 10rpx;" @click="navTo('/pages/administrator/admin_class?grade_id='+ item._id)"
 						 type="primary">查看
@@ -27,6 +46,7 @@
 						<button size="mini" style="padding: 10rpx;" type="primary" @click="edit(item)">修改</button>
 						<button size="mini" style="padding: 10rpx;" type="warn" @click="del(item)">删除</button>
 					</t-td>
+					</view>
 				</t-tr>
 			</t-table>
 		</view>
@@ -50,21 +70,36 @@
 			return {
 				tableList: [{
 						_id: "", // string，自生成--未处理
-						name: '一年级', //一年级、二年级等
+						School:'学校',
+						college:'学院',
+						name: '大一', //一年级、二年级等
 						order: 0, //年级排序
 					},
 					{
 						_id: "", // string，自生成--未处理
-						name: '二年级',
+						School:'学校',
+						college:'学院',
+						name: '大二',
 						order: 1, //年级排序
 					},
 					{
 						_id: "", // string，自生成--未处理
-						name: '三年级', //一年级、二年级等
+						School:'学校',
+						college:'学院',
+						name: '大三', //一年级、二年级等
 						order: 2, //年级排序
+					},
+					{
+						_id: "", // string，自生成--未处理
+						School:'学校',
+						college:'学院',
+						name: '大四', //一年级、二年级等
+						order: 3, //年级排序
 					}
 				],
 				//_id: '', // string，自生成--未处理
+				School:'',
+				college:'',
 				name: '', //一年级、二年级等
 				order: '', //年级排序
 				isedit: false,
@@ -95,6 +130,7 @@
 					});
 			},
 			submit() {
+				// 年级
 				if (this.name == '') {
 					uni.showToast({
 						icon: "none",
@@ -105,6 +141,29 @@
 				uni.showLoading({
 					title: '提交中..'
 				})
+				// 学校
+				if (this.School == '') {
+					uni.showToast({
+						icon: "none",
+						title: "学校名称不允许为空！"
+					});
+					return false;
+				}
+				uni.showLoading({
+					title: '提交中..'
+				})
+				// 学院
+				if (this.college == '') {
+					uni.showToast({
+						icon: "none",
+						title: "学院名称不允许为空！"
+					});
+					return false;
+				}
+				uni.showLoading({
+					title: '提交中..'
+				})
+				
 				//利用this.isedit为true时，提示为修改。之后，把this.isedit修改为默认值false
 				if (this.isedit == true) {
 					// 修改
@@ -113,6 +172,8 @@
 						data: {}
 					}
 					delete this.list_item._id //删除ID,更新内容不能带上ID
+					this.list_item.School = this.School
+					this.list_item.college = this.college
 					this.list_item.name = this.name
 					form.data = this.list_item
 					uni.showModal({
@@ -141,6 +202,8 @@
 				} else {
 					// 添加
 					var info = {
+						School: this.School,
+						college: this.college,
 						name: this.name,
 						order: this.tableList.length + 1
 					}
@@ -168,11 +231,15 @@
 				}
 				// 点击提交之后，恢复默认值
 				this.isedit = false;
+				this.School = '';
+				this.college = '';
 				this.name = '';
 			},
 			cancel() {
 				// 点击取消之后，恢复默认值
 				this.isedit = false;
+				this.School = '';
+				this.college = '';
 				this.name = '';
 			},
 			navTo(url) {
@@ -182,6 +249,8 @@
 			},
 			edit(list_item) {
 				// 表格里显示出要修改的那一条信息
+				this.School = list_item.School;
+				this.college = list_item.college;
 				this.name = list_item.name;
 				// 此时直接点击提交后，调用的push方法，就不是修改，而是又增加一条信息
 				this.isedit = true;
@@ -199,6 +268,8 @@
 						if (res.confirm) {
 							// findIndex 遍历查找指定元素的数组下标。
 							var idx = this.tableList.findIndex(item => {
+								return item.School == list_item.School;
+								return item.college == list_item.college;
 								return item.name == list_item.name;
 								/* 相当于
 								if(item.name == name){

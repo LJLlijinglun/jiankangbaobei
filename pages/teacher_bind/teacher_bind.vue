@@ -8,8 +8,8 @@
 			        选择学校
 			    </view>
 			    <view class="uni-list-cell-db">
-			        <picker @change="bindPickerChange" :value="gradeIndex" :range="gradeArr" range-key="name">
-			            <view class="uni-input">{{gradeName}}</view>
+			        <picker @change="bindPickerChange" :value="gradeIndex" :range="gradeArr" range-key="School">
+			            <view class="uni-input">{{gradeSchool}}</view>
 			        </picker>
 			    </view>
 			</view>
@@ -18,8 +18,8 @@
 			        选择学院
 			    </view>
 			    <view class="uni-list-cell-db">
-			        <picker @change="bindPickerChange" :value="gradeIndex" :range="gradeArr" range-key="name">
-			            <view class="uni-input">{{gradeName}}</view>
+			        <picker @change="bindPickerChange" :value="gradeIndex" :range="gradeArr" range-key="college">
+			            <view class="uni-input">{{gradecollege}}</view>
 			        </picker>
 			    </view>
 			</view>
@@ -34,9 +34,19 @@
                 </view>
             </view>
 
+			<view class="uni-list-cell">
+                <view class="uni-list-cell-left">
+                    选择专业
+                </view>
+                <view class="uni-list-cell-db">
+                    <picker @change="bindClassChange" :value="classIndex" :range="classArr" range-key="major">
+                        <view class="uni-input">{{classmajor}}</view>
+                    </picker>
+                </view>
+            </view>
             <view class="uni-list-cell">
                 <view class="uni-list-cell-left">
-                    选择专业班级
+                    选择班级
                 </view>
                 <view class="uni-list-cell-db">
                     <picker @change="bindClassChange" :value="classIndex" :range="classArr" range-key="name">
@@ -60,9 +70,12 @@
                 classList: [], //所有班级列表
                 gradeArr: [], //  年级
                 gradeIndex: "", //年级索引
+                gradeSchool:"",
+                gradecollege:"",
                 gradeName:"",
                 classArr: [], //  特定年级下的班级
                 classIndex: "", //班级索引
+                classmajor:"",
                 className:""
             };
         },
@@ -99,12 +112,15 @@
                 console.log(e.target.value)
 
                 this.gradeIndex = e.target.value
+                this.gradeSchool = this.gradeArr[this.gradeIndex].School
+                this.gradecollege = this.gradeArr[this.gradeIndex].college
                 this.gradeName = this.gradeArr[this.gradeIndex].name
                 this.classArr = this.classList[this.gradeArr[this.gradeIndex]._id]
             },
 
             bindClassChange: function(e) {
                 this.classIndex = e.target.value
+                this.classmajor = this.classArr[this.classIndex].major
                 this.className = this.classArr[this.classIndex].name
             },
 
