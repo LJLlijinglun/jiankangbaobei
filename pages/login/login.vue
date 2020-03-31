@@ -259,8 +259,8 @@
 
 <style>
 	.orgimg {
-		 padding: 10px;
 		 margin-bottom: 5upx;
+		 margin-left: 55upx;
 		 width:1000upx;
 		 height: 200upx;},
 	.weixinBtn {

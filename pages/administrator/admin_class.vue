@@ -1,7 +1,7 @@
 <!-- 管理员管理班级信息 海南-前端-李静伦 -->
 <template>
 	<view class="warp" style="margin-top:50rpx ;">
-		<view align="center">管理专业班级信息</view>
+		<view align="center" style="margin-left:10rpx ;">管理专业班级信息</view>
 		<form action="">
 			<view class="uni-title  uni-common-pl">专业</view>
 			<view class="uni-form-item dashed-bottom">
@@ -29,7 +29,7 @@
 					<t-th align="left">总人数</t-th>
 					<t-th align="left">操作</t-th>
 				</t-tr>
-				<t-tr font-size="14" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
+				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
 					<view style="width: 80rpx;">
 						<t-td align="left">{{ item.order }}</t-td>
 					</view>
