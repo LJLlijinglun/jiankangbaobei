@@ -1,4 +1,4 @@
-<!-- 管理员管理年级信息 海南-前端-李静伦 -->
+<!-- 管理员管理年级信息 -->
 <template>
 	<view class="warp" style="margin-top:50rpx ;">
 		<view align="center" style="margin-left:10rpx ;">管理高校年级信息</view>
@@ -28,26 +28,28 @@
 					<t-th align="left">学院</t-th>
 					<t-th align="left">年级</t-th>
 					<view style="width: 250rpx;">
-					<t-th align="left">操作</t-th>
+						<t-th align="left">操作</t-th>
 					</view>
 				</t-tr>
+				<!-- operation -->
 				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
 					<view style="width: 80rpx;">
-						<t-td align="left">{{item.order }}</t-td>
+							<t-td align="left">{{item.order }}</t-td>
 					</view>
 					<t-td align="left">{{ item.School }}</t-td>
 					<t-td align="left">{{ item.college }}</t-td>
 					<t-td align="left">{{ item.name }}</t-td>
 					<view style="width: 250rpx;">
-					<t-td align="left">
-						<button size="mini" style="padding: 10rpx;" @click="navTo('/pages/administrator/admin_class?grade_id='+ item._id)"
-						 type="primary">查看
-						</button>
-						<button size="mini" style="padding: 10rpx;" type="primary" @click="edit(item)">修改</button>
-						<button size="mini" style="padding: 10rpx;" type="warn" @click="del(item)">删除</button>
-					</t-td>
+							<t-td align="left">
+									<button size="mini" style="padding: 10rpx;" @click="navTo('/pages/administrator/admin_class?grade_id='+ item._id)"
+									 type="primary">查看
+									</button>
+									<button size="mini" style="padding: 10rpx;" type="primary" @click="edit(item)">修改</button>
+									<button size="mini" style="padding: 10rpx;" type="warn" @click="del(item)">删除</button>
+							</t-td>
 					</view>
 				</t-tr>
+				<!-- operation -->
 			</t-table>
 		</view>
 	</view>

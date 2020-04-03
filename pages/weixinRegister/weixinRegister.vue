@@ -1,4 +1,4 @@
-<!-- 微信注册 邯郸-前端-秦少卫 -->
+<!-- 微信注册 -->
 <template>
 	<div>
 		<view class="container">

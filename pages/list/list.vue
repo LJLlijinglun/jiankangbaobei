@@ -1,4 +1,4 @@
-<!-- 每日健康统计汇总 深圳-前端-张昊 -->
+<!-- 每日健康统计汇总 -->
 <template>
 	<view class="body">
 		<view class="collect">

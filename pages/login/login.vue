@@ -1,4 +1,4 @@
-<!-- 用户登录 邯郸-前端-秦少卫 -->
+<!-- 用户登录 -->
 <template>
 	<div>
 		<view class="container">

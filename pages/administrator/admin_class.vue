@@ -1,4 +1,4 @@
-<!-- 管理员管理班级信息 海南-前端-李静伦 -->
+<!-- 管理员管理班级信息 -->
 <template>
 	<view class="warp" style="margin-top:50rpx ;">
 		<view align="center" style="margin-left:10rpx ;">管理专业班级信息</view>

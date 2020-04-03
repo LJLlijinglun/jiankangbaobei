@@ -1,4 +1,4 @@
-<!-- 用户注册 海南-前端-李静伦 -->
+<!-- 用户注册  -->
 <template>
 	<view>
 		<view class="container">
