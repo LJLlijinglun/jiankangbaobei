@@ -19,7 +19,9 @@
 			<button @click="cancel"  type="primary" size="mini" class="button margin-top margin-lr">取消</button>
 		</form>
 		<view class="box" style="margin-top:50rpx ;">
+			<!-- HTML表格 -->
 			<t-table border="1" border-color="#e6e5e5">
+				<!-- 表头 -->
 				<t-tr font-size="12" color="#101411" align="center">
 					<view style="width: 80rpx;">
 						<t-th align="left">序号</t-th>
@@ -31,7 +33,7 @@
 						<t-th align="left">操作</t-th>
 					</view>
 				</t-tr>
-				<!-- operation -->
+				<!-- 表头 -->
 				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
 					<view style="width: 80rpx;">
 							<t-td align="left">{{item.order }}</t-td>
@@ -39,6 +41,7 @@
 					<t-td align="left">{{ item.School }}</t-td>
 					<t-td align="left">{{ item.college }}</t-td>
 					<t-td align="left">{{ item.name }}</t-td>
+					<!-- operation -->
 					<view style="width: 250rpx;">
 							<t-td align="left">
 									<button size="mini" style="padding: 10rpx;" @click="navTo('/pages/administrator/admin_class?grade_id='+ item._id)"
@@ -48,9 +51,10 @@
 									<button size="mini" style="padding: 10rpx;" type="warn" @click="del(item)">删除</button>
 							</t-td>
 					</view>
+					<!-- operation -->
 				</t-tr>
-				<!-- operation -->
 			</t-table>
+			<!-- HTML表格 -->
 		</view>
 	</view>
 </template>
