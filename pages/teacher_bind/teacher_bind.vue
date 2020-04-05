@@ -141,7 +141,12 @@
                         console.log(res);
                         uni.showToast({
                             title: '绑定成功',
-                            duration: 2000
+                            duration: 2000,
+							success() {
+							    uni.navigateTo({
+							        url:'/pages/index/index'
+							    })
+							}
                         });
                     })
                     .catch(err => {

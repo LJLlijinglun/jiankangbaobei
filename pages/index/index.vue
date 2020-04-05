@@ -31,10 +31,10 @@
 		<!-- 管理员 -->
 		<view class="buttonGroup" v-if="userType === 3">
 			<navigator url="../administrator/admin_grade" class="linkBtn">
-				年级管理
+				学院年级管理
 			</navigator>
 			<navigator url="../administrator/admin_class" class="linkBtn">
-				班级管理
+				专业班级管理
 			</navigator>
 		</view>
 

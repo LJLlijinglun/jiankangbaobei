@@ -259,8 +259,8 @@
 
 <style>
 	.orgimg {
-		 margin-bottom: 5upx;
-		 margin-left: 55upx;
+		 margin-bottom: 20upx;
+		 margin-left: 35upx;
 		 width:1000upx;
 		 height: 200upx;},
 	.weixinBtn {
