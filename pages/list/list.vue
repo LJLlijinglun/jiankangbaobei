@@ -22,7 +22,8 @@
 		<view class="collect">
 			已统计
 			<span>{{ stat }}</span>
-			人，缺
+			人，
+			缺
 			<span>{{ lack }}</span>
 			人
 			<view @click="selectTime = true" class="select">
@@ -30,13 +31,21 @@
 				<span>{{ time }}</span>
 			</view>
 		</view>
+		<view class="Statistics">
+			疑似症状
+			<span>{{ stat }}</span>
+			人，
+			疑似症状
+			<span>{{ stat }}</span>
+			人
+		</view>
 		
 		<t-table border="1" border-color="#e6e5e5">
 			<t-tr font-size="10" color="#101411">
 				<t-th align="left">学号</t-th>
 				<t-th align="left">姓名</t-th>
 				<t-th align="left">健康状态</t-th>
-				<t-th align="left">所在地</t-th>
+				<t-th align="left">当前位置</t-th>
 				<t-th align="left">今日体温</t-th>
 				<t-th align="left">接触鄂人</t-th>
 				<t-th align="left">疑似症状</t-th>
@@ -51,7 +60,7 @@
 				<t-td class="name" >
                     <view :style="{color:item.health == '良好'?'#1aad19':'#f00'}">{{ item.health }}</view>
                 </t-td>
-				<t-td>{{ item.current_pos == 2 ? '湖北' : item.current_pos == 1 ? '外地' : '本地' }}</t-td>
+				<t-td>{{ item.current_location == 2 ? '外地(湖北)' : item.current_location == 1 ? '外地（除湖北）' : '本地' }}</t-td>
 				<t-td>{{ item.temperature }}</t-td>
 				<t-td>{{ item.contact_virus == 0 ? '未接触' : '有接触' }}</t-td>
 				<t-td>{{ item.have_symptom == 0 ? '无' : '有' }}</t-td>
@@ -72,6 +81,7 @@ import tTable from '@/components/t-table/t-table.vue';
 import tTh from '@/components/t-table/t-th.vue';
 import tTr from '@/components/t-table/t-tr.vue';
 import tTd from '@/components/t-table/t-td.vue';
+import icons from '@/components/uni-icons/uni-icons.vue';
 
 const myDate = new Date();
 let time2 = myDate.getFullYear() + '/' + (myDate.getMonth() + 1) + '/' + (myDate.getDate() + 1);
@@ -131,7 +141,8 @@ export default {
 		tTable,
 		tTh,
 		tTr,
-		tTd
+		tTd,
+		icons
 	},
 	onLoad(data) {
 		if (uni.getStorageSync('token')) {
@@ -348,6 +359,14 @@ export default {
 .collect {
     padding: 22px;
 	line-height: 80rpx;
+	span {
+		color: #f00;
+	}
+}
+.Statistics {
+    padding: 22px;
+	// line-height: 1rpx;
+	margin-top: -80upx;
 	span {
 		color: #f00;
 	}
