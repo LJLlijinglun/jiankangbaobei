@@ -223,7 +223,7 @@ function base64urlEscape(str) {
 
 var jwtSimple = jwt_1;
 
-const passSecret = ''; //用于用户数据库密码加密的密钥，使用一个比较长的随机字符串即可
+const passSecret = 'Tinalijinglun1749553634'; //用于用户数据库密码加密的密钥，使用一个比较长的随机字符串即可
 
 //上面三个字段非常重要！！！
 
