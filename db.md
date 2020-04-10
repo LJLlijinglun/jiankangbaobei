@@ -3,13 +3,15 @@
 
 一期仅支持单个学校，班级管理分年级、班级两个维度，涉及两张表：
 
-年级表：
+学院年级表：
 ```
 grade_list
 {
     _id: "", // string，自生成
-    name:'', //一年级、二年级等
-    order:1'' //年级排序
+	School: "",//所属某高校
+	college: "",//所属院系
+    name: "", //大一、大二年级等
+    order:1, //int年级排序
 }
 ```
 
@@ -19,10 +21,11 @@ grade_list
 class_list
 {
     _id: "", // string，自生成
-    grade_id:"",//所属年级ID
-    name:"",//班级名称，如"994班"、"信计02"等
-    student_sum:0,//当前班级总人数
-    order:1,//int，同年级下的排序
+    grade_id: "", //所属年级ID
+	major: "", //所属专业，如"网络工程"等
+	name: "", //班级名称，如"1班"等
+	order: 1, //int，同年级下的排序
+	student_sum: "0",//int，当前班级总人数
 }
 ```
 
@@ -46,7 +49,7 @@ school
 - 管理员（后台手动配置）
 - 老师
 - 学生
-- 学生家长（小学、幼儿园代替孩子报备）
+- 学生家长（若学生无法返校代替孩子报备）
 
 老师表：
 ```
@@ -106,7 +109,7 @@ daily_report_log
     stu_name: "", // string 学生姓名
 	contact_virus:0, // 有无接触湖北/武汉人员 int 0无，1有
 	have_symptom:0, // 有无疑似症状 int 0无，1有
-	current_pos:"", //当前位置，0：本地，1：外地（除湖北），2：外地（湖北）
+	current_location:"", //当前位置，0：本地，1：外地（除湖北），2：外地（湖北）
     health:""//当前健康状况，多选，可选项：good/kesou/fali/fare，多选时逗号分隔,良好不能好其他多选
 	temperature: 0, // 体温，可选
 }
