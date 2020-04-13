@@ -35,7 +35,7 @@
 			疑似症状
 			<span>{{ stat }}</span>
 			人，
-			疑似症状
+			14天之内接触过湖北人员总人数
 			<span>{{ stat }}</span>
 			人
 		</view>
