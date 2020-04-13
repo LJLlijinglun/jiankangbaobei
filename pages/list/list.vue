@@ -51,19 +51,27 @@
 				<t-th align="left">疑似症状</t-th>
 				
 			</t-tr>
-			<t-tr font-size="9" :style="{ color: item.temperature > 37 || item.contact_like_virus == 1 || item.Suspected_symptoms == 1 ? '#f00' : '#000' }"
-			:class="{ listBgc: index % 2 == 0, listOne: index == 0, listFinally: index == stat - 1 }"
+			<t-tr font-size="9"
+			:class="{listFinally: index == stat - 1 }"
 			v-for="(item, index) in arr"
 			:key="index">
 				<t-td class="id">{{ item.stu_num }}</t-td>
 				<t-td class="name">{{ item.stu_name }}</t-td>
-				<t-td class="name" >
-                    <view :style="{color:item.health == '良好'?'#1aad19':'#f00'}">{{ item.health }}</view>
+				<t-td>
+                    <view class="Name" :style="{color:item.health == '良好'?'#000':'#f00'}">{{ item.health }}</view>
                 </t-td>
-				<t-td>{{ item.current_location == 2 ? '外地(湖北)' : item.current_location == 1 ? '外地（除湖北）' : '本地' }}</t-td>
-				<t-td>{{ item.temperature }}</t-td>
-				<t-td>{{ item.contact_virus == 0 ? '未接触' : '有接触' }}</t-td>
-				<t-td>{{ item.have_symptom == 0 ? '无' : '有' }}</t-td>
+				<t-td>
+					<view class="Name" :style="{color:item.current_location==2 ? '#f00' : '#000'}">{{ item.current_location == 2 ? '外地(湖北)' : item.current_location == 1 ? '外地（除湖北）' : '本地' }}</view>
+				</t-td>
+				<t-td>
+					<view class="Name" :style="{ color: item.temperature >=37.2 ? '#f00' : '#000'}">{{ item.temperature }}</view>
+				</t-td>
+				<t-td>
+				    <view class="Name" :style="{color:item.contact_virus == '0' ? '#000' : '#f00'}">{{ item.contact_virus == 0 ? '未接触' : '有接触'}}</view>
+				</t-td>
+				<t-td>
+					<view class="Name" :style="{color:item.have_symptom == '0' ? '#000' : '#f00'}">{{ item.have_symptom == 0 ? '无' : '有' }}</view>
+				</t-td>
 			</t-tr>
 		</t-table>
 		<view v-if="selectTime == true" class="time">
@@ -376,24 +384,8 @@ export default {
 	margin-left: 20rpx;
 	color: #000 !important;
 }
-
-// .list {
-// 	width: 95%;
-// 	margin: 0 auto;
-// 	color: #999;
-// 	border: 1px solid #999;
-// 	padding-bottom: 20rpx;
-// }
-
-.listBgc {
-	background-color: rgb(245, 245, 244);
-}
-.listOne {
-	border-radius: 20rpx 20rpx 0 0;
-}
-
-.listFinally {
-	border-radius: 0 0 20rpx 20rpx;
+.color {
+	font-size: 1rpx;
 }
 
 .top {
@@ -407,6 +399,7 @@ export default {
 	}
 	.name {
 		margin-left: 20rpx;
+		
 	}
 }
 
@@ -440,5 +433,8 @@ export default {
 	transform: translateX(-50%);
 	font-size: 36rpx;
 	color: #ccc;
+}
+.Name {
+	font-size: 20upx;
 }
 </style>
