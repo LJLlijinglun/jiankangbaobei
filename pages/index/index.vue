@@ -1,7 +1,10 @@
 <template>
 	<view class="content">
 		<view class="text-area">
-			<view style="margin-top: 150upx;margin-bottom: 100upx;">
+			<view class="orgimg">
+				<image src="../../static/banner2.jpg" mode="widthFix" style="width: 100%;"></image>
+			</view>
+			<view style="margin-top: 150upx;margin-bottom: 70upx;">
 				<text class="title">{{school}}学生健康报备系统</text>
 			</view>
 			<div class="tipText">
@@ -133,6 +136,12 @@
 </script>
 
 <style>
+	.orgimg {
+		 margin-bottom: -120upx;
+		 margin-top: 30upx;
+		 /* margin-left: 35upx; */
+		 width:700upx;
+		 height: 300upx;},
 	.content {
 		display: flex;
 		flex-direction: column;

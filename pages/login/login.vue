@@ -3,7 +3,7 @@
 	<div>
 		<view class="container">
 			<view class="orgimg">
-				<image src="../../static/index.png" mode="widthFix" ></image>
+				<image src="../../static/index.png" mode="widthFix" style="width: 100%;"></image>
 			</view>
 			<view class="title">
 				<text>{{school}}学生健康报备系统</text>
@@ -260,8 +260,7 @@
 <style>
 	.orgimg {
 		 margin-bottom: 20upx;
-		 margin-left: 35upx;
-		 width:1000upx;
+	
 		 height: 300upx;},
 	.weixinBtn {
 		color: #007AFF;
