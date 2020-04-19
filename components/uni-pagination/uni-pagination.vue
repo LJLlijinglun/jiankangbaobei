@@ -60,15 +60,15 @@
 			},
 			total: { // 数据总量
 				type: [Number, String],
-				default: 0
+				default: 100
 			},
 			pageSize: { // 每页数据量
 				type: [Number, String],
-				default: 10
+				default: 5
 			},
 			showIcon: { // 是否以 icon 形式展示按钮
 				type: [Boolean, String],
-				default: false
+				default: true
 			}
 		},
 		data() {
