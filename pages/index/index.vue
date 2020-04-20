@@ -4,6 +4,11 @@
 			<view class="orgimg">
 				<image src="../../static/banner2.jpg" mode="widthFix" style="width: 100%;"></image>
 			</view>
+			<view class="buttonGroup" style="width: 300upx;margin-top: 150upx;">
+				<navigator url="../list/index" class="linkBtn" >
+					最新疫情
+				</navigator>
+			</view>
 			<view style="margin-top: 150upx;margin-bottom: 70upx;">
 				<text class="title">{{school}}学生健康报备系统</text>
 			</view>
