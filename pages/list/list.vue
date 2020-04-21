@@ -1,24 +1,7 @@
 <!-- 每日健康统计汇总 -->
 <template>
 	<view>
-		<uni-search-bar @confirm="search" @input="input" ></uni-search-bar>
-	<!-- Search -->
-		<!-- <view class="search" :style="{ backgroundColor: backgroundColor }">
-			<view class="content" :style="{ 'border-radius': radius + 'px', border: border }">
-				<view class="content-box" :class="{ center: mode === 2 }">
-					<text class="icon icon-search">&#xe61c;</text>
-					<input class="input" :class="{ center: !active && mode === 2 }" :focus="isFocus" :placeholder="placeholder" v-model="inputVal" @focus="focus" @blur="blur" /> -->
-					<!-- <view v-if="!active && mode === 2" class="input sub" @click="getFocus">请输入搜索内容</view> -->
-					<!-- <text v-if="isDelShow" class="icon icon-del" @click="clear">&#xe644;</text>
-				</view>
-				<view v-show="(active && show && button === 'inside') || (isDelShow && button === 'inside')" class="searchBtn" @click="search">搜索</view>
-			</view>
-			<view v-if="button === 'outside'" class="button" :class="{ active: show || active }" @click="search">
-				<view class="button-item">{{ !show ? searchName : '搜索' }}</view>
-			</view>
-		</view> -->
-	
-	
+		<!-- <uni-search-bar @confirm="search" @input="input" ></uni-search-bar> -->
 	<view class="body">
 		<view class="collect">
 			已统计
@@ -32,23 +15,28 @@
 				<span>{{ time }}</span>
 			</view>
 		</view>
-		<view class="Statistics">
+		<!-- <view class="Statistics">
 			疑似症状
 			<span>{{ stat }}</span>
 			人，
 			14天之内接触过湖北人员总人数
 			<span>{{ stat }}</span>
 			人
-		</view>
+		</view> -->
 		
 		<t-table border="1" border-color="#e6e5e5">
-			<t-tr font-size="10" color="#101411">
+			<t-tr font-size="8" color="#101411">
+				
 				<t-th align="left">学号</t-th>
+				
 				<t-th align="left">姓名</t-th>
+				
 				<t-th align="left">健康状态</t-th>
 				<t-th align="left">当前位置</t-th>
 				<t-th align="left">今日体温</t-th>
-				<t-th align="left">接触鄂人</t-th>
+				<view style="width: 127upx;">
+				<t-th align="left">接触湖北人</t-th>
+				</view>
 				<t-th align="left">疑似症状</t-th>
 				
 			</t-tr>
@@ -68,7 +56,7 @@
 					<view class="Name" :style="{ color: item.temperature >=37.2 ? '#f00' : '#000'}">{{ item.temperature }}</view>
 				</t-td>
 				<t-td>
-				    <view class="Name" :style="{color:item.contact_virus == '0' ? '#000' : '#f00'}">{{ item.contact_virus == 0 ? '未接触' : '有接触'}}</view>
+				    <view style="width: 100upx;" class="Name" :style="{color:item.contact_virus == '0' ? '#000' : '#f00'}">{{ item.contact_virus == 0 ? '未接触' : '有接触'}}</view>
 				</t-td>
 				<t-td>
 					<view class="Name" :style="{color:item.have_symptom == '0' ? '#000' : '#f00'}">{{ item.have_symptom == 0 ? '无' : '有' }}</view>
@@ -82,8 +70,7 @@
 		<view v-if="arr.length == 0" class="null">该日期未登记健康状态</view>
 	</view>
 	<view style="margin-top: 20upx;">
-	<!-- <uni-pagination total="20"></uni-pagination> -->
-	<uni-pagination></uni-pagination>
+	<!-- <uni-pagination></uni-pagination> -->
 	</view>
 </view>
 
@@ -102,46 +89,9 @@ import icons from '@/components/uni-icons/uni-icons.vue';
 const myDate = new Date();
 let time2 = myDate.getFullYear() + '/' + (myDate.getMonth() + 1) + '/' + (myDate.getDate() + 1);
 export default {
-	// Search
-	// props: {
-	// 		mode: {
-	// 			type: Number,
-	// 			default: 1
-	// 		},
-	// 		button: {
-	// 			type: String,
-	// 			default: 'outside'
-	// 		},
-	// 		show: {
-	// 			type: Boolean,
-	// 			default: true
-	// 		},
-	// 		radius: {
-	// 			type: String,
-	// 			default: '60'
-	// 		},
-	// 		placeholder: {
-	// 			type: String,
-	// 			default: '请输入搜索内容'
-	// 		},
-	// 		backgroundColor: {
-	// 			type: String,
-	// 			default: '#fff'
-	// 		},
-	// 		border: { type: String, default: '1px #f5f5f5 solid' }
-			
-	// 	},
-	
 	
 	data() {
 		return {
-			// Search
-			// active: false,
-			// inputVal: '',
-			// searchName: '取消',
-			// isDelShow: false,
-			// isFocus: false,
-			// Search
 						
 			class_id: "", //  班级标志
 			num: -1,
@@ -174,33 +124,6 @@ export default {
 		}
 	},
 	methods: {
-		// Search
-		// focus() {
-		// 			this.active = true;
-		// 		},
-		// 		blur() {
-		// 			this.isFocus = false;
-		// 			if (!this.inputVal) {
-		// 				this.active = false;
-		// 			}
-		// 		},
-		// 		clear() {
-		// 			this.inputVal = '';
-		// 			this.active = false;
-		// 			this.$emit('search', '');
-		// 		},
-		// 		getFocus() {
-		// 			this.isFocus = true;
-		// 		},
-		// 		search() {
-		// 			if (!this.inputVal) return;
-		// 			console.log(this.inputVal);
-		// 			this.$emit('search', this.inputVal);
-		// 		},
-				// Search
-		
-		
-		
 		change(e) {
 			console.log(e);
 			time2 = e.year + '/' + e.month + '/' + (e.date + 1);
@@ -256,119 +179,13 @@ export default {
 				});
 		}
 	},
-	// Search 监听事件
-	// watch: {
-	// 		inputVal(newVal) {
-	// 			if (newVal) {
-	// 				this.searchName = '搜索';
-	// 				this.isDelShow = true;
-	// 			} else {
-	// 				this.searchName = '取消';
-	// 				this.isDelShow = false;
-	// 			}
-	// 		}
-	// 	}
+	
 	
 	
 };
 </script>
 
 <style lang="scss">
-	// Search
-	// .search {
-	// 	display: flex;
-	// 	width: 100%;
-	// 	border-bottom: 1px #f5f5f5 solid;
-	// 	box-sizing: border-box;
-	// 	padding: 15upx;
-	// 	font-size: $uni-font-size-base;
-	// 	background: #fff;
-	// 	.content {
-	// 		display: flex;
-	// 		align-items: center;
-	// 		width: 100%;
-	// 		height: 60upx;
-	// 		border: 1px #ccc solid;
-	// 		background: #fff;
-	// 		overflow: hidden;
-	// 		transition: all 0.2s linear;
-	// 		border-radius: 30px;
-	 
-	// 		.content-box {
-	// 			width: 100%;
-	// 			display: flex;
-	// 			align-items: center;
-	// 			background-color:#F4F4F4;
-	// 			&.center {
-	// 				justify-content: center;
-	// 			}
-	// 			.icon {
-	// 				padding: 0 15upx;
-					
-	// 				&.icon-del {
-	// 					font-size: 38upx;
-						
-	// 				}
-	// 			}
-	// 			.input {
-	// 				width: 100%;
-	// 				max-width: 100%;
-	// 				line-height: 60upx;
-	// 				height: 60upx;
-	// 				color:#333;
-	// 				font-size:28upx;
-	// 				// transition: all 0.2s linear;
-	// 				&.center {
-	// 					width: 200upx;
-	// 				}
-	// 				&.sub {
-	// 					// position: absolute;
-	// 					width: auto;
-	// 					color: grey;
-	// 				}
-	// 			}
-	// 		}
-	// 		.searchBtn {
-	// 			height: 100%;
-	// 			flex-shrink: 0;
-	// 			padding: 0 30upx;
-	// 			background: $uni-color-success;
-	// 			line-height: 60upx;
-	// 			color: #fff;
-	// 			border-left: 1px #ccc solid;
-	// 			transition: all 0.3s;
-	// 		}
-	// 	}
-	 
-	// 	.button {
-	// 		display: flex;
-	// 		align-items: center;
-	// 		justify-content: center;
-	// 		position: relative;
-	// 		flex-shrink: 0;
-	// 		width: 0;
-	// 		transition: all 0.2s linear;
-	// 		white-space: nowrap;
-	// 		overflow: hidden;
-	// 		&.active {
-	// 			padding-left: 15upx;
-	// 			width: 100upx;
-	// 			color: #8BC34A;
-	// 		}
-	// 	}
-	// }
-	// @font-face {
-	// 	font-family: 'iconfont';
-	// 	src: url('https://at.alicdn.com/t/font_989023_efq0mtli526.ttf') format('truetype');
-	// }
-	// .icon {
-	// 	font-family: iconfont;
-	// 	font-size: 32upx;
-	// 	font-style: normal;
-	// 	color: #999;
-	// }
-	// Search
-	
 	
 .body {
 	background-color: #fff;
