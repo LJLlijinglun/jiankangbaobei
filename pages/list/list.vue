@@ -1,7 +1,7 @@
 <!-- 每日健康统计汇总 -->
 <template>
 	<view>
-		<!-- <uni-search-bar @confirm="search" @input="input" ></uni-search-bar> -->
+		<uni-search-bar @confirm="search" @input="input" ></uni-search-bar>
 	<view class="body">
 		<view class="collect">
 			已统计
@@ -15,17 +15,17 @@
 				<span>{{ time }}</span>
 			</view>
 		</view>
-		<!-- <view class="Statistics">
+		<view class="Statistics">
 			疑似症状
 			<span>{{ stat }}</span>
 			人，
 			14天之内接触过湖北人员总人数
 			<span>{{ stat }}</span>
 			人
-		</view> -->
+		</view>
 		
 		<t-table border="1" border-color="#e6e5e5">
-			<t-tr font-size="8" color="#101411">
+			<t-tr font-size="10" color="#101411">
 				
 				<t-th align="left">学号</t-th>
 				
@@ -70,7 +70,7 @@
 		<view v-if="arr.length == 0" class="null">该日期未登记健康状态</view>
 	</view>
 	<view style="margin-top: 20upx;">
-	<!-- <uni-pagination></uni-pagination> -->
+	<uni-pagination></uni-pagination>
 	</view>
 </view>
 
@@ -263,6 +263,6 @@ export default {
 	color: #ccc;
 }
 .Name {
-	font-size: 20upx;
+	font-size: 19upx;
 }
 </style>
