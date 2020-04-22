@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="text-area">
 			<view class="orgimg">
-				<image src="../../static/banner2.jpg" mode="widthFix" style="width: 100%;"></image>
+				<image src="../../static/jiankan.jpg" mode="widthFix" style="width: 100%;"></image>
 			</view>
 			<view class="buttonGroup" style="width: 300upx;margin-top: 150upx;">
 				<navigator url="../list/index" class="linkBtn" >
