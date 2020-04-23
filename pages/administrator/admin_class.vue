@@ -29,7 +29,7 @@
 					<t-th align="left">总人数</t-th>
 					<t-th align="left">操作</t-th>
 				</t-tr>
-				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
+				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item._id">
 					<view style="width: 80rpx;">
 						<t-td align="left">{{ item.order }}</t-td>
 					</view>

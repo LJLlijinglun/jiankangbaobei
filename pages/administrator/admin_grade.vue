@@ -34,7 +34,7 @@
 					</view>
 				</t-tr>
 				<!-- 表头 -->
-				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item.id">
+				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item._id">
 					<view style="width: 80rpx;">
 							<t-td align="left">{{item.order }}</t-td>
 					</view>
