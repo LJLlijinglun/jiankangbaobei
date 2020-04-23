@@ -157,6 +157,8 @@ export default {
 					this.arr = res.result.arr;
 					if (res.result.student_sum != '未获取到该班级信息') {
 						this.lack = res.result.student_sum - this.stat;
+						this.Suspected =this.Suspected+1;
+						this.Contact =this.Contact+1;
 					} else {
 						uni.showToast({
 							title: res.result.student_sum,
