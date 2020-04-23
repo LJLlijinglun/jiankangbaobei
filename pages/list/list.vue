@@ -17,10 +17,10 @@
 		</view>
 		<view class="Statistics">
 			疑似症状
-			<span>{{ stat }}</span>
+			<span>{{ Suspected }}</span>
 			人，
 			14天之内接触过湖北人员总人数
-			<span>{{ stat }}</span>
+			<span>{{ Contact }}</span>
 			人
 		</view>
 		
@@ -99,6 +99,8 @@ export default {
 			selectTime: false, //  选择时间弹框
 			stat: 0, //  已统计人数
 			lack: 0, //  缺少
+			Suspected:0,
+			Contact:0,
 			arr: [] //  学生的每日健康统计数组
 		};
 	},
@@ -150,7 +152,7 @@ export default {
 				})
 				.then(res => {
 					uni.hideLoading();
-					console.log(res);
+					// console.log(res.result.student_sum);
 					this.stat = res.result.arr.length;
 					this.arr = res.result.arr;
 					if (res.result.student_sum != '未获取到该班级信息') {

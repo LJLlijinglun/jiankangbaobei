@@ -6,14 +6,16 @@ exports.main = async (event, context) => {
 	const dailyReportLog = db.collection('daily_report_log') //  获取统计数据表
 	const classList = db.collection('class_list') //  获取班级表
 
+	
+	
 	let overall = await classList.where({
 		// 获取班级表的总数
-		_id: dbCmd.eq(event.class_id)
+		_id: dbCmd.eq(event.student_sum)
 	}).get()
 	let report = await dailyReportLog.where({
 		// 请求当前时间的数据
-		class_id: dbCmd.eq(event.class_id),
-		create_time: dbCmd.gte(event.time).and(dbCmd.lt(event.time2)),
+		class_id: dbCmd.eq(event.arr),
+		create_time: dbCmd.gte(event.time).and(dbCmd.lt(event.time2))
 	}).get()
 
 	let data = {
