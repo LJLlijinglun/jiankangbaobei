@@ -157,8 +157,20 @@ export default {
 					this.arr = res.result.arr;
 					if (res.result.student_sum != '未获取到该班级信息') {
 						this.lack = res.result.student_sum - this.stat;
-						this.Suspected =this.Suspected+1;
-						this.Contact =this.Contact+1;
+						let a=0
+						let b=0
+						this.arr.forEach((item)=>{
+							if(item.have_symptom!=0){
+								a++
+							}
+							if(item.contact_virus!=0){
+								b++
+							}
+						})
+						this.Suspected=a
+						this.Contact=b
+						// this.Suspected =this.Suspected+1;
+						// this.Contact =this.Contact+1;
 					} else {
 						uni.showToast({
 							title: res.result.student_sum,
