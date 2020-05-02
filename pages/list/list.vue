@@ -19,7 +19,7 @@
 			疑似症状
 			<span>{{ Suspected }}</span>
 			人，
-			14天之内接触过湖北人员总人数
+			14天之内接触过疫区人员总人数
 			<span>{{ Contact }}</span>
 			人
 		</view>
@@ -35,7 +35,7 @@
 				<t-th align="left">当前位置</t-th>
 				<t-th align="left">今日体温</t-th>
 				<view style="width: 127upx;">
-				<t-th align="left">接触湖北人</t-th>
+				<t-th align="left">接触疫区人</t-th>
 				</view>
 				<t-th align="left">疑似症状</t-th>
 				
