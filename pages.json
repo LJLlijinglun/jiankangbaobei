@@ -59,6 +59,12 @@
 			"style": {
 				"navigationBarTitleText": "绑定学生信息"
 			}
+		},
+		{
+			"path": "pages/tuxing/index",
+			"style": {
+				"navigationBarTitleText": "健康报备统计图"
+			}
 		}
 	],
 	"globalStyle": {

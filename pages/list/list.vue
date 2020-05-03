@@ -3,6 +3,11 @@
 	<view>
 		<uni-search-bar @confirm="search" @input="input" ></uni-search-bar>
 	<view class="body">
+		<view class="buttonGroup" style="width: 200upx;margin-top: 10upx;">
+			<navigator url="../tuxing/index" class="linkBtn" >
+				图形统计
+			</navigator>
+		</view>
 		<view class="collect">
 			已统计
 			<span>{{ stat }}</span>
@@ -202,6 +207,25 @@ export default {
 </script>
 
 <style lang="scss">
+	.buttonGroup {
+		width: 100%;
+		margin-bottom: 10upx;
+	}
+	
+	.buttonGroup .linkBtn {
+		font-size: 25upx;
+		display: block;
+		line-height: 50upx;
+		margin: 0 auto;
+		width: 70%;
+		text-align: center;
+		margin-bottom: 20upx;
+		border-radius: 40upx;
+		box-shadow: 0 3px 5px rgba(5, 26, 180, 0.35);
+		font-weight: bold;
+		background: linear-gradient(135deg, #576FEC 0%, #576FEC 76%, #536DEC 76%);
+		color: #fff;
+	}
 	
 .body {
 	background-color: #fff;
@@ -209,6 +233,7 @@ export default {
 	margin-top: -30rpx;
 }
 .collect {
+	margin-top: -20px;
     padding: 22px;
 	line-height: 80rpx;
 	span {
