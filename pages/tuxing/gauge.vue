@@ -21,6 +21,7 @@
 			<canvas canvas-id="canvasGauge" id="canvasGauge" class="charts"></canvas>
 			<!--#endif-->
 		</view>
+		<button class="qiun-button" @tap="changeData()">更新图表</button>
 		<!--#ifdef H5 -->
 		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
 			<view class="qiun-title-dot-light">标准数据格式</view>
