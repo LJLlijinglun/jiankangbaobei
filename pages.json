@@ -65,6 +65,12 @@
 			"style": {
 				"navigationBarTitleText": "健康报备统计图"
 			}
+		},
+		{
+			"path": "pages/tuxing/gauge",
+			"style": {
+				"navigationBarTitleText": "健康报备统计图"
+			}
 		}
 	],
 	"globalStyle": {

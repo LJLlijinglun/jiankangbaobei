@@ -4,7 +4,7 @@
 		<uni-search-bar @confirm="search" @input="input" ></uni-search-bar>
 	<view class="body">
 		<view class="buttonGroup" style="width: 200upx;margin-top: 10upx;">
-			<navigator url="../tuxing/index" class="linkBtn" >
+			<navigator url="../tuxing/gauge" class="linkBtn" >
 				图形统计
 			</navigator>
 		</view>
