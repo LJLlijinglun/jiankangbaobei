@@ -1,19 +1,17 @@
 <template>
 	<view class="qiun-columns">
-		<!--#ifdef H5 -->
-		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
-			<view class="qiun-title-dot-light">页面地址</view>
+		<view class="Orgimg">
+			<image src="../../static/ganzoubingdu5.jpg" mode="widthFix" style="width: 100%;"></image>
 		</view>
-		<view class="qiun-bg-white qiun-padding">
-		    <text>pages/basic/gauge/gauge</text>
-		</view>
-		<!--#endif-->
-		<button class="qiun-button" @tap="changeType()">更改样式</button>
+		<button type="primary" class="qiun-button" @tap="changeType()">更改样式</button>
 		
-		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
+		<view style="margin-top: 10px;margin-left: 10px;" class="qiun-bg-white qiun-title-bar qiun-common-mt" >
 			<view class="qiun-title-dot-light">今日健康报备占班级总人数的百分比</view>
 		</view>
-		<view class="qiun-charts" >
+		<view style="margin-top: -20px;" class="orgimg">
+			<image src="../../static/xintiao.gif" mode="widthFix" style="width: 100%;"></image>
+		</view>
+		<view style="margin-top:-50px;" class="qiun-charts" >
 			<!--#ifdef MP-ALIPAY -->
 			<canvas canvas-id="canvasGauge" id="canvasGauge" class="charts" :width="cWidth*pixelRatio" :height="cHeight*pixelRatio" :style="{'width':cWidth+'px','height':cHeight+'px'}"></canvas>
 			<!--#endif-->
@@ -21,17 +19,8 @@
 			<canvas canvas-id="canvasGauge" id="canvasGauge" class="charts"></canvas>
 			<!--#endif-->
 		</view>
-		<button class="qiun-button" @tap="changeData()">更新图表</button>
-		<!--#ifdef H5 -->
-		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
-			<view class="qiun-title-dot-light">标准数据格式</view>
-		</view>
-		<view class="qiun-bg-white qiun-padding">
-		    <textarea class="qiun-textarea" auto-height="true" maxlength="-1" v-model="textarea"/>
-		</view>
 		<view class="qiun-text-tips">Tips：修改后点击更新图表</view>
-		<button class="qiun-button" @tap="changeData()">更新图表</button>
-		<!--#endif-->
+		<button type="primary" class="qiun-button" @tap="changeData()">更新图表</button>
 	</view>
 </template>
 
@@ -194,6 +183,18 @@
 
 <style>
 	/*样式的width和height一定要与定义的cWidth和cHeight相对应*/
+	.orgimg {
+		 margin-bottom: 25upx;
+		 /* margin-top: -5upx; */
+		 /* margin-left: 35upx; */
+		 width:200upx;
+		 height: 200upx;},
+		 .Orgimg {
+		 	 margin-bottom: 50upx;
+		 	 /* margin-top: 30upx; */	
+			 /* padding: 35upx; */
+		 	 width:750upx;
+		 	 height: 300upx;},
 	.qiun-charts {
 		width: 750upx;
 		height: 500upx;

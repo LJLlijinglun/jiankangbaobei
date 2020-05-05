@@ -9,7 +9,7 @@
 					最新疫情消息
 				</navigator>
 			</view>
-			<view style="margin-top: 150upx;margin-bottom: 70upx;">
+			<view style="margin-top: 50upx;margin-bottom: 70upx;">
 				<text class="title">{{school}}学生健康报备系统</text>
 			</view>
 			<div class="tipText">
