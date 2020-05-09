@@ -20,7 +20,7 @@
 			<!--#endif-->
 		</view>
 		<view class="qiun-text-tips">Tips：修改后点击更新图表</view>
-		<button type="primary" class="qiun-button" @tap="changeData()">更新图表</button>
+		<button style="margin-bottom:10px ;" type="primary" class="qiun-button" @tap="changeData()">更新图表</button>
 	</view>
 </template>
 
