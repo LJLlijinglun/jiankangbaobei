@@ -14,7 +14,7 @@
 				<input class="uni-input" name="temperature" type="digit" placeholder="请输入今日体温℃" />
 			</view>
 			<view class="uni-title  uni-common-pl margin-top text-bold text-center">选择项</view>
-			<view class="uni-title  uni-common-pl">有无接触湖北/武汉人员</view>
+			<view class="uni-title  uni-common-pl">有无接触疫区人员</view>
 			<view class="uni-list">
 				<radio-group name="contact_virus">
 					<label class="uni-list-cell uni-list-cell-pd">
@@ -48,7 +48,7 @@
 					</label>
 				</radio-group>
 			</view>
-			<view class="uni-title  uni-common-pl">当前位置</view>
+			<view class="uni-title  uni-common-pl">当前所在地</view>
 			<view class="uni-list">
 				<radio-group name="current_location">
 					<label class="uni-list-cell uni-list-cell-pd">
