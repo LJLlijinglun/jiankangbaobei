@@ -1,9 +1,9 @@
 <!-- 每日健康统计汇总 -->
 <template>
 	<view>
-		<uni-search-bar @confirm="search" @input="input" ></uni-search-bar>
+		<!-- <uni-search-bar @confirm="search" @input="input" ></uni-search-bar> -->
 	<view class="body">
-		<view class="buttonGroup" style="width: 200upx;margin-top: 10upx;">
+		<view class="buttonGroup" style="width: 200upx;margin-top: 15upx;">
 			<navigator url="../tuxing/gauge" class="linkBtn" >
 				图形统计
 			</navigator>
@@ -29,8 +29,8 @@
 			人
 		</view>
 		
-		<t-table border="1" border-color="#e6e5e5">
-			<t-tr font-size="10" color="#101411">
+		<t-table border="1" border-color="#101411">
+			<t-tr font-size="11" color="#101411">
 				
 				<t-th align="left">学号</t-th>
 				
@@ -46,6 +46,7 @@
 				
 			</t-tr>
 			<t-tr font-size="10"
+			color="#101411"
 			:class="{listFinally: index == stat - 1 }"
 			v-for="(item, index) in arr"
 			:key="index">
@@ -233,7 +234,8 @@ export default {
 	margin-top: -30rpx;
 }
 .collect {
-	margin-top: -20px;
+	font-size: 25upx;
+	margin-top: -30px;
     padding: 22px;
 	line-height: 80rpx;
 	span {

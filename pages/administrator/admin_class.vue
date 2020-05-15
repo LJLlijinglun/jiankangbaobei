@@ -20,7 +20,7 @@
 		</form>
 		<view class="box" style="margin-top:50rpx ;">
 			<t-table border="1" border-color="#e6e5e5">
-				<t-tr font-size="12" color="#101411" align="center">
+				<t-tr font-size="14" color="#101411" align="center">
 					<view style="width: 80rpx;">
 						<t-th align="left">序号</t-th>
 					</view>
@@ -29,7 +29,7 @@
 					<t-th align="left">总人数</t-th>
 					<t-th align="left">操作</t-th>
 				</t-tr>
-				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item._id">
+				<t-tr font-size="12" color="#101411" align="right" v-for="(item,index) of tableList" :key="item._id">
 					<view style="width: 80rpx;">
 						<t-td align="left">{{ item.order }}</t-td>
 					</view>

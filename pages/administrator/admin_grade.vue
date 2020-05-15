@@ -22,25 +22,29 @@
 			<!-- HTML表格 -->
 			<t-table border="1" border-color="#e6e5e5">
 				<!-- 表头 -->
-				<t-tr font-size="12" color="#101411" align="center">
-					<view style="width: 80rpx;">
+				<t-tr font-size="14" color="#101411" align="center">
+					<view style="width: 75rpx;">
 						<t-th align="left">序号</t-th>
 					</view>
 					<t-th align="left">学校</t-th>
 					<t-th align="left">学院</t-th>
-					<t-th align="left">年级</t-th>
+					<!-- <view style="width: 90rpx;"> -->
+					    <t-th align="left">年级</t-th>
+					<!-- </view> -->
 					<view style="width: 250rpx;">
 						<t-th align="left">操作</t-th>
 					</view>
 				</t-tr>
 				<!-- 表头 -->
-				<t-tr font-size="10" color="#494743" align="right" v-for="(item,index) of tableList" :key="item._id">
-					<view style="width: 80rpx;">
+				<t-tr font-size="12" color="#101411" align="right" v-for="(item,index) of tableList" :key="item._id">
+					<view style="width: 75rpx;">
 							<t-td align="left">{{item.order }}</t-td>
 					</view>
 					<t-td align="left">{{ item.School }}</t-td>
 					<t-td align="left">{{ item.college }}</t-td>
+					<!-- <view style="width: 90rpx;"> -->
 					<t-td align="left">{{ item.name }}</t-td>
+					<!-- </view> -->
 					<!-- operation -->
 					<view style="width: 250rpx;">
 							<t-td align="left">
