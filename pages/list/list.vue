@@ -45,7 +45,7 @@
 				<t-th align="left">疑似症状</t-th>
 				
 			</t-tr>
-			<t-tr font-size="9"
+			<t-tr font-size="10"
 			:class="{listFinally: index == stat - 1 }"
 			v-for="(item, index) in arr"
 			:key="index">
