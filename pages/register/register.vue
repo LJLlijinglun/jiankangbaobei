@@ -36,7 +36,9 @@
 				</swiper-item>
 			</swiper>
 			<view class="login-form margin-top">
-				<input type="text" value="" placeholder="请输入用户名" v-model="username" />
+				<input type="text" value="" placeholder="请输入学校" v-if="userType == 0" />
+				<input type="text" value="" placeholder="请输入用户名" v-if="userType != 0" v-model="username" />
+				<input type="text" value="" placeholder="请输入教师工号" v-if="userType == 0" v-model="username" />
 				<input type="text" value="" placeholder="请输入密码" password="true" v-model="password" />
 				<input type="text" value="" placeholder="请再次确认密码" password="true" v-model="repeatPassword" />
 				<div class="buttonGroup">
@@ -114,9 +116,9 @@
 					})
 					return 
 				}
-				if(username.indexOf('teacher') && this.userType == 0){
+				if(username.indexOf('110') && this.userType == 0){
 					uni.showModal({
-						content: '老师的注册方式请咨询管理员',
+						content: '请使用教师工号进行注册',
 						showCancel: false
 					})
 					return 
