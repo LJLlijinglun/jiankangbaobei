@@ -118,7 +118,7 @@
 				}
 				if(username.indexOf('110') && this.userType == 0){
 					uni.showModal({
-						content: '请使用教师工号进行注册',
+						content: '请使用教师工号进行注册，或者请联系学校管理员',
 						showCancel: false
 					})
 					return 
