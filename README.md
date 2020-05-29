@@ -3,11 +3,9 @@
 
 ## 快速体验
 
- **体验地址（请使用手机访问）：** [xsjk.m3w.cn](https://xsjk.m3w.cn)
-
  **项目截图：** 
 
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0214/235844_1b089891_604311.png "xsjk-03.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0214/235844_1b089891_604311.png)
 
 ## 项目规划
 
@@ -235,8 +233,6 @@ validateToken() {
 
 
 ## 关于源码的二次开发
-
-本项目基于木兰宽松许可证，代码可自由使用和更改。
 
 - 项目前端基于uni-app框架开发，它是一个通过vue.js编写所有平台应用的多端框架。你需要了解uni-app以便于更深度的定制。uni-app的文档详见：[https://uniapp.dcloud.io/README](https://uniapp.dcloud.io/README)
 - 项目后端基于uniCloud，它是一个基于js的云开发模式，与微信、支付宝小程序的云开发类似，但可以跨端使用。它基于serverless模型，优势众多。建议开发者通读一遍uniCloud的介绍和快速上手，以方便做二次开发。uniCloud的文档详见：[https://uniapp.dcloud.io/uniCloud/README](https://uniapp.dcloud.io/uniCloud/README)
